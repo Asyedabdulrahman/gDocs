@@ -88,39 +88,39 @@ body {
 }
 
 .tiptap {
-  h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5, 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6 {
     line-height: 1.1;
     margin-top: 2.5rem;
     text-wrap: pretty;
   }
 
-  h1, 
+  h1,
   h2 {
     margin-top: 3.5rem;
     margin-bottom: 1.5rem;
   }
 
-  h1 { 
-    font-size: 1.4rem; 
+  h1 {
+    font-size: 1.4rem;
   }
 
-  h2 { 
-    font-size: 1.2rem; 
+  h2 {
+    font-size: 1.2rem;
   }
 
-  h3 { 
-    font-size: 1.1rem; 
+  h3 {
+    font-size: 1.1rem;
   }
 
-  h4, 
-  h5, 
-  h6 { 
-    font-size: 1rem; 
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
   }
   ul,
   ol {
@@ -145,8 +145,8 @@ body {
     }
   }
 
-   /* Task list specific styles */
-   ul[data-type="taskList"] {
+  /* Task list specific styles */
+  ul[data-type="taskList"] {
     list-style: none;
     margin-left: 0;
     padding: 0;
@@ -175,8 +175,8 @@ body {
     }
   }
 
-   /* Table-specific styling */
-   table {
+  /* Table-specific styling */
+  table {
     border-collapse: collapse;
     margin: 0;
     overflow: hidden;
@@ -206,7 +206,10 @@ body {
     .selectedCell:after {
       background: #c7c7c8;
       content: "";
-      left: 0; right: 0; top: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       pointer-events: none;
       position: absolute;
       z-index: 2;
@@ -241,6 +244,14 @@ body {
 
     &.ProseMirror-selectednode {
       outline: 3px solid var(--primary);
+    }
+  }
+  a {
+    @apply text-blue-600;
+    cursor: pointer;
+
+    &:hover {
+      @apply underline;
     }
   }
 }
