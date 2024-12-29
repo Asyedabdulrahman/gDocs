@@ -16,8 +16,14 @@ import TextStyle from "@tiptap/extension-text-style";
 import Heading from '@tiptap/extension-heading'
 import { Color } from '@tiptap/extension-color'
 import Highlight from "@tiptap/extension-highlight";
-import Link from '@tiptap/extension-link'
-
+import Link from '@tiptap/extension-link';
+import Text from '@tiptap/extension-text'
+import TextAlign from '@tiptap/extension-text-align'
+import BulletList from '@tiptap/extension-bullet-list'
+import Document from '@tiptap/extension-document'
+import ListItem from '@tiptap/extension-list-item'
+import { FontsizeExtension } from "@/extension/font-size";
+import { LineHeightExtension } from "@/extension/line-height"
 
 const Editor = () => {
     const { setEditor } = useEditorStore();
@@ -51,6 +57,11 @@ const Editor = () => {
             },
             extensions: [
                 StarterKit, TaskList,
+                LineHeightExtension.configure({
+                    types: ["heading", "paragraph"],
+                    defaultLineHeight: 'normal', 
+                }),
+                FontsizeExtension,
                 TaskItem.configure({
                     nested: true,
                 }),
@@ -119,6 +130,13 @@ const Editor = () => {
                     },
 
                 }),
+                TextAlign.configure({
+                    types: ['heading', 'paragraph'],
+                }),
+                BulletList,
+                Document,
+                ListItem,
+                Text,
                 TableRow,
                 TableHeader,
                 TableCell,
